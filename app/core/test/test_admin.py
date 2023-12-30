@@ -14,7 +14,7 @@ class AdminSiteTests(TestCase):
     def setUp(self):
         """Create user and client."""
         self.client = Client()
-        self.admin_user =  get_user_model().objects.create_superuser(
+        self.admin_user = get_user_model().objects.create_superuser(
             email='admin@example.com',
             password='testpass123',
         )
@@ -25,7 +25,7 @@ class AdminSiteTests(TestCase):
             password='testpass123',
             name='Test User',
         )
-    
+
     def test_users_list(self):
         """Test that users are listed on page."""
         url = reverse('admin:core_user_changelist')
